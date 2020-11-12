@@ -9,7 +9,21 @@ import(
 	"io/ioutil" // for read file
 )
 
+
+type Test struct{
+	Id int
+	Name string
+}
+
 func main(){
+
+	a := Test{}
+	a.Id = 100
+	a.Name = "aaa"
+	fmt.Println(a)
+	b := []byte(a)
+	md := md5.Sum(b)
+	fmt.Println("md:", md)
 
 	data, _ := ioutil.ReadFile("hash.txt")
 
